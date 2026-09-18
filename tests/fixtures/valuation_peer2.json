@@ -1,0 +1,73 @@
+{
+  "company": {
+    "ticker": "V2PE",
+    "name": "Valuation Peer Two",
+    "sector": "valuation"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1500
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 750
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 300
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash And Equivalents",
+      "value": 75
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 60
+    }
+  ],
+  "prices": [
+    {
+      "date": "2023-12-31",
+      "open": 15.0,
+      "high": 16.0,
+      "low": 14.0,
+      "close": 15.0,
+      "volume": 1000
+    }
+  ]
+}

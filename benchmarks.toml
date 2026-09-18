@@ -1,0 +1,8 @@
+# Optional benchmark file.
+# Ratios can be benchmarked by default and by sector.
+#
+# [default]
+# current_ratio = 1.0
+#
+# [sectors.logistics]
+# current_ratio = 1.2

@@ -1,0 +1,225 @@
+{
+  "company": {
+    "ticker": "FHLTH",
+    "name": "Forensic Healthy Sample",
+    "sector": "manufacturing"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 800
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Receivables",
+      "value": 80
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Gross Profit",
+      "value": 320
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 1800
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Fixed Assets",
+      "value": 450
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 550
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Short Term Investments",
+      "value": 90
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Depreciation Amortization",
+      "value": 90
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Operating Expenses",
+      "value": 160
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Liabilities",
+      "value": 550
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Long Term Debt",
+      "value": 180
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 280
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Retained Earnings",
+      "value": 700
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 1250
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "EBIT",
+      "value": 220
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1000
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Receivables",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Gross Profit",
+      "value": 420
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 2000
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Fixed Assets",
+      "value": 500
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 600
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Short Term Investments",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Depreciation Amortization",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Operating Expenses",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Liabilities",
+      "value": 600
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 250
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Long Term Debt",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 300
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Retained Earnings",
+      "value": 800
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 1400
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBIT",
+      "value": 300
+    }
+  ]
+}

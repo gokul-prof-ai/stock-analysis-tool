@@ -1,0 +1,4 @@
+statement_type,fiscal_year,line_item,value
+balance_sheet,2023,Equity,1000
+pnl,2023,Revenue,2000
+cashflow,2023,Operating Cash Flow,300

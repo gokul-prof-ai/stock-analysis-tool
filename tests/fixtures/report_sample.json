@@ -1,0 +1,779 @@
+{
+  "company": {
+    "ticker": "RPTC",
+    "name": "Report Capstone Sample",
+    "sector": "reporting"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1000.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 500.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 1000.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 300.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 50.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 120.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 30.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 220.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 110.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 550.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 1100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 330.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 220.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 55.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 132.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 33.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1210.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 242.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 121.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 605.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 1210.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 363.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 242.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 60.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 145.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 36.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1331.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 266.2
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 133.1
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 665.5
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 1331.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 399.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 266.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 66.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 160.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 40.0
+    }
+  ],
+  "prices": [
+    {
+      "date": "2023-10-01",
+      "open": 99.7,
+      "high": 100.9,
+      "low": 98.8,
+      "close": 100.0,
+      "volume": 10000
+    },
+    {
+      "date": "2023-10-02",
+      "open": 101.09,
+      "high": 102.29,
+      "low": 100.19,
+      "close": 101.39,
+      "volume": 10100
+    },
+    {
+      "date": "2023-10-03",
+      "open": 102.45,
+      "high": 103.65,
+      "low": 101.55,
+      "close": 102.75,
+      "volume": 10200
+    },
+    {
+      "date": "2023-10-04",
+      "open": 103.72,
+      "high": 104.92,
+      "low": 102.82,
+      "close": 104.02,
+      "volume": 10300
+    },
+    {
+      "date": "2023-10-05",
+      "open": 104.89,
+      "high": 106.09,
+      "low": 103.99,
+      "close": 105.19,
+      "volume": 10400
+    },
+    {
+      "date": "2023-10-06",
+      "open": 105.91,
+      "high": 107.11,
+      "low": 105.01,
+      "close": 106.21,
+      "volume": 10500
+    },
+    {
+      "date": "2023-10-07",
+      "open": 106.76,
+      "high": 107.96,
+      "low": 105.86,
+      "close": 107.06,
+      "volume": 10600
+    },
+    {
+      "date": "2023-10-08",
+      "open": 107.43,
+      "high": 108.63,
+      "low": 106.53,
+      "close": 107.73,
+      "volume": 10700
+    },
+    {
+      "date": "2023-10-09",
+      "open": 107.9,
+      "high": 109.1,
+      "low": 107.0,
+      "close": 108.2,
+      "volume": 10800
+    },
+    {
+      "date": "2023-10-10",
+      "open": 108.17,
+      "high": 109.37,
+      "low": 107.27,
+      "close": 108.47,
+      "volume": 10900
+    },
+    {
+      "date": "2023-10-11",
+      "open": 108.25,
+      "high": 109.45,
+      "low": 107.35,
+      "close": 108.55,
+      "volume": 11000
+    },
+    {
+      "date": "2023-10-12",
+      "open": 108.14,
+      "high": 109.34,
+      "low": 107.24,
+      "close": 108.44,
+      "volume": 11100
+    },
+    {
+      "date": "2023-10-13",
+      "open": 107.88,
+      "high": 109.08,
+      "low": 106.98,
+      "close": 108.18,
+      "volume": 11200
+    },
+    {
+      "date": "2023-10-14",
+      "open": 107.48,
+      "high": 108.68,
+      "low": 106.58,
+      "close": 107.78,
+      "volume": 11300
+    },
+    {
+      "date": "2023-10-15",
+      "open": 106.97,
+      "high": 108.17,
+      "low": 106.07,
+      "close": 107.27,
+      "volume": 11400
+    },
+    {
+      "date": "2023-10-16",
+      "open": 106.41,
+      "high": 107.61,
+      "low": 105.51,
+      "close": 106.71,
+      "volume": 11500
+    },
+    {
+      "date": "2023-10-17",
+      "open": 105.81,
+      "high": 107.01,
+      "low": 104.91,
+      "close": 106.11,
+      "volume": 11600
+    },
+    {
+      "date": "2023-10-18",
+      "open": 105.22,
+      "high": 106.42,
+      "low": 104.32,
+      "close": 105.52,
+      "volume": 11700
+    },
+    {
+      "date": "2023-10-19",
+      "open": 104.69,
+      "high": 105.89,
+      "low": 103.79,
+      "close": 104.99,
+      "volume": 11800
+    },
+    {
+      "date": "2023-10-20",
+      "open": 104.24,
+      "high": 105.44,
+      "low": 103.34,
+      "close": 104.54,
+      "volume": 11900
+    },
+    {
+      "date": "2023-10-21",
+      "open": 103.92,
+      "high": 105.12,
+      "low": 103.02,
+      "close": 104.22,
+      "volume": 12000
+    },
+    {
+      "date": "2023-10-22",
+      "open": 103.74,
+      "high": 104.94,
+      "low": 102.84,
+      "close": 104.04,
+      "volume": 12100
+    },
+    {
+      "date": "2023-10-23",
+      "open": 103.74,
+      "high": 104.94,
+      "low": 102.84,
+      "close": 104.04,
+      "volume": 12200
+    },
+    {
+      "date": "2023-10-24",
+      "open": 103.93,
+      "high": 105.13,
+      "low": 103.03,
+      "close": 104.23,
+      "volume": 12300
+    },
+    {
+      "date": "2023-10-25",
+      "open": 104.32,
+      "high": 105.52,
+      "low": 103.42,
+      "close": 104.62,
+      "volume": 12400
+    },
+    {
+      "date": "2023-10-26",
+      "open": 104.91,
+      "high": 106.11,
+      "low": 104.01,
+      "close": 105.21,
+      "volume": 12500
+    },
+    {
+      "date": "2023-10-27",
+      "open": 105.68,
+      "high": 106.88,
+      "low": 104.78,
+      "close": 105.98,
+      "volume": 12600
+    },
+    {
+      "date": "2023-10-28",
+      "open": 106.64,
+      "high": 107.84,
+      "low": 105.74,
+      "close": 106.94,
+      "volume": 12700
+    },
+    {
+      "date": "2023-10-29",
+      "open": 107.74,
+      "high": 108.94,
+      "low": 106.84,
+      "close": 108.04,
+      "volume": 12800
+    },
+    {
+      "date": "2023-10-30",
+      "open": 108.98,
+      "high": 110.18,
+      "low": 108.08,
+      "close": 109.28,
+      "volume": 12900
+    },
+    {
+      "date": "2023-10-31",
+      "open": 110.3,
+      "high": 111.5,
+      "low": 109.4,
+      "close": 110.6,
+      "volume": 13000
+    },
+    {
+      "date": "2023-11-01",
+      "open": 111.68,
+      "high": 112.88,
+      "low": 110.78,
+      "close": 111.98,
+      "volume": 13100
+    },
+    {
+      "date": "2023-11-02",
+      "open": 113.08,
+      "high": 114.28,
+      "low": 112.18,
+      "close": 113.38,
+      "volume": 13200
+    },
+    {
+      "date": "2023-11-03",
+      "open": 114.46,
+      "high": 115.66,
+      "low": 113.56,
+      "close": 114.76,
+      "volume": 13300
+    },
+    {
+      "date": "2023-11-04",
+      "open": 115.77,
+      "high": 116.97,
+      "low": 114.87,
+      "close": 116.07,
+      "volume": 13400
+    },
+    {
+      "date": "2023-11-05",
+      "open": 116.98,
+      "high": 118.18,
+      "low": 116.08,
+      "close": 117.28,
+      "volume": 13500
+    },
+    {
+      "date": "2023-11-06",
+      "open": 118.07,
+      "high": 119.27,
+      "low": 117.17,
+      "close": 118.37,
+      "volume": 13600
+    },
+    {
+      "date": "2023-11-07",
+      "open": 118.99,
+      "high": 120.19,
+      "low": 118.09,
+      "close": 119.29,
+      "volume": 13700
+    },
+    {
+      "date": "2023-11-08",
+      "open": 119.74,
+      "high": 120.94,
+      "low": 118.84,
+      "close": 120.04,
+      "volume": 13800
+    },
+    {
+      "date": "2023-11-09",
+      "open": 120.29,
+      "high": 121.49,
+      "low": 119.39,
+      "close": 120.59,
+      "volume": 13900
+    },
+    {
+      "date": "2023-11-10",
+      "open": 120.65,
+      "high": 121.85,
+      "low": 119.75,
+      "close": 120.95,
+      "volume": 14000
+    },
+    {
+      "date": "2023-11-11",
+      "open": 120.8,
+      "high": 122.0,
+      "low": 119.9,
+      "close": 121.1,
+      "volume": 14100
+    },
+    {
+      "date": "2023-11-12",
+      "open": 120.77,
+      "high": 121.97,
+      "low": 119.87,
+      "close": 121.07,
+      "volume": 14200
+    },
+    {
+      "date": "2023-11-13",
+      "open": 120.57,
+      "high": 121.77,
+      "low": 119.67,
+      "close": 120.87,
+      "volume": 14300
+    },
+    {
+      "date": "2023-11-14",
+      "open": 120.22,
+      "high": 121.42,
+      "low": 119.32,
+      "close": 120.52,
+      "volume": 14400
+    },
+    {
+      "date": "2023-11-15",
+      "open": 119.76,
+      "high": 120.96,
+      "low": 118.86,
+      "close": 120.06,
+      "volume": 14500
+    },
+    {
+      "date": "2023-11-16",
+      "open": 119.21,
+      "high": 120.41,
+      "low": 118.31,
+      "close": 119.51,
+      "volume": 14600
+    },
+    {
+      "date": "2023-11-17",
+      "open": 118.62,
+      "high": 119.82,
+      "low": 117.72,
+      "close": 118.92,
+      "volume": 14700
+    },
+    {
+      "date": "2023-11-18",
+      "open": 118.03,
+      "high": 119.23,
+      "low": 117.13,
+      "close": 118.33,
+      "volume": 14800
+    },
+    {
+      "date": "2023-11-19",
+      "open": 117.47,
+      "high": 118.67,
+      "low": 116.57,
+      "close": 117.77,
+      "volume": 14900
+    },
+    {
+      "date": "2023-11-20",
+      "open": 116.98,
+      "high": 118.18,
+      "low": 116.08,
+      "close": 117.28,
+      "volume": 15000
+    },
+    {
+      "date": "2023-11-21",
+      "open": 116.6,
+      "high": 117.8,
+      "low": 115.7,
+      "close": 116.9,
+      "volume": 15100
+    },
+    {
+      "date": "2023-11-22",
+      "open": 116.36,
+      "high": 117.56,
+      "low": 115.46,
+      "close": 116.66,
+      "volume": 15200
+    },
+    {
+      "date": "2023-11-23",
+      "open": 116.29,
+      "high": 117.49,
+      "low": 115.39,
+      "close": 116.59,
+      "volume": 15300
+    },
+    {
+      "date": "2023-11-24",
+      "open": 116.4,
+      "high": 117.6,
+      "low": 115.5,
+      "close": 116.7,
+      "volume": 15400
+    },
+    {
+      "date": "2023-11-25",
+      "open": 116.7,
+      "high": 117.9,
+      "low": 115.8,
+      "close": 117.0,
+      "volume": 15500
+    },
+    {
+      "date": "2023-11-26",
+      "open": 117.2,
+      "high": 118.4,
+      "low": 116.3,
+      "close": 117.5,
+      "volume": 15600
+    },
+    {
+      "date": "2023-11-27",
+      "open": 117.9,
+      "high": 119.1,
+      "low": 117.0,
+      "close": 118.2,
+      "volume": 15700
+    },
+    {
+      "date": "2023-11-28",
+      "open": 118.79,
+      "high": 119.99,
+      "low": 117.89,
+      "close": 119.09,
+      "volume": 15800
+    },
+    {
+      "date": "2023-11-29",
+      "open": 119.83,
+      "high": 121.03,
+      "low": 118.93,
+      "close": 120.13,
+      "volume": 15900
+    }
+  ]
+}

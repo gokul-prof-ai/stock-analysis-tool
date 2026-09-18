@@ -1,0 +1,79 @@
+{
+  "company": {
+    "ticker": "VALU",
+    "name": "Valuation Sample Company",
+    "sector": "valuation"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1000
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 500
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash And Equivalents",
+      "value": 50
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Short Term Investments",
+      "value": 20
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Capital Expenditure",
+      "value": 50
+    }
+  ],
+  "prices": [
+    {
+      "date": "2023-12-31",
+      "open": 10.0,
+      "high": 11.0,
+      "low": 9.0,
+      "close": 10.0,
+      "volume": 1000
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "company": {
+    "ticker": "FULL",
+    "name": "Full Sample Co",
+    "sector": "logistics"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Assets",
+      "value": 120
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Current Liabilities",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 20
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Short Term Investments",
+      "value": 10
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Receivables",
+      "value": 30
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Inventory",
+      "value": 40
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Assets",
+      "value": 500
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Liabilities",
+      "value": 300
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Equity",
+      "value": 200
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Long Term Debt",
+      "value": 120
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Fixed Assets",
+      "value": 250
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Payables",
+      "value": 50
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1000
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Cost of Goods Sold",
+      "value": 600
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Operating Expenses",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Operating Profit",
+      "value": 250
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 300
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBIT",
+      "value": 250
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Interest Expense",
+      "value": 50
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 150
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Depreciation Amortization",
+      "value": 50
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "cashflow",
+      "line_item": "Operating Cash Flow",
+      "value": 180
+    }
+  ],
+  "prices": [
+    {
+      "date": "2023-12-31",
+      "open": 290,
+      "high": 310,
+      "low": 285,
+      "close": 300,
+      "volume": 100000
+    }
+  ]
+}

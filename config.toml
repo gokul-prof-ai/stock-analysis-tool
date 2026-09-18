@@ -1,0 +1,16 @@
+[app]
+name = "Stock Analysis Tool"
+version = "2.0.0"
+environment = "dev"
+
+[database]
+path = "data/stock_analysis.db"
+
+[ingestion]
+max_file_mb = 50
+allowed_extensions = [".pdf", ".xlsx", ".xls", ".csv", ".json"]
+
+[forensic]
+altman_safe = 2.99
+altman_grey = 1.81
+beneish_threshold = -1.78

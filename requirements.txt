@@ -1,0 +1,15 @@
+PySide6
+pydantic>=2.7
+pandas
+numpy
+scipy
+matplotlib
+plotly
+selenium
+beautifulsoup4
+pdfplumber
+PyMuPDF
+openpyxl
+python-docx
+reportlab
+pytest

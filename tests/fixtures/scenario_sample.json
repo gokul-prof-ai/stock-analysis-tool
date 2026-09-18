@@ -1,0 +1,163 @@
+{
+  "company": {
+    "ticker": "SCEN",
+    "name": "Scenario Sample Company",
+    "sector": "scenario"
+  },
+  "financials": [
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1000.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 200.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 50.0
+    },
+    {
+      "fiscal_year": 2020,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 220.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 110.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 50.0
+    },
+    {
+      "fiscal_year": 2021,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1210.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 242.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 121.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 50.0
+    },
+    {
+      "fiscal_year": 2022,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Revenue",
+      "value": 1331.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "EBITDA",
+      "value": 266.2
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "pnl",
+      "line_item": "Net Profit",
+      "value": 133.1
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Shares Outstanding",
+      "value": 100.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Cash and Equivalents",
+      "value": 50.0
+    },
+    {
+      "fiscal_year": 2023,
+      "statement_type": "balance_sheet",
+      "line_item": "Total Debt",
+      "value": 100.0
+    }
+  ],
+  "prices": [
+    {
+      "date": "2023-12-31",
+      "open": 20.0,
+      "high": 21.0,
+      "low": 19.0,
+      "close": 20.0,
+      "volume": 1000
+    }
+  ]
+}
