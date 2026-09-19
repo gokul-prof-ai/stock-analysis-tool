@@ -1,7 +1,10 @@
 from types import SimpleNamespace
 
+from PySide6.QtWidgets import QApplication
+
 from src.calculations.decision import DecisionEngine
 from src.models import CompanyProfile, FinancialLine, NormalizedCompany
+from src.ui.ingestion_widget import IngestionWidget
 from src.ui.pages.summary_page import build_company_narrative
 
 
@@ -35,3 +38,12 @@ def test_company_narrative_contains_key_facts():
     assert "TEST" in narrative
     assert "technology" in narrative
     assert "10.0%" in narrative
+
+
+def test_ingestion_widget_uses_accessible_search_controls():
+    app = QApplication.instance() or QApplication([])
+    widget = IngestionWidget()
+
+    assert widget.ticker_input.isClearButtonEnabled() is True
+    assert widget.ticker_input.minimumHeight() >= 44
+    assert widget.fetch_btn.minimumHeight() >= 44

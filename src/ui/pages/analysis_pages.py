@@ -210,7 +210,7 @@ class ScenarioPage(ContentPage):
 class ChartPage(QWidget):
     """TradingView-style chart workspace."""
 
-    RANGES = [("1M", 22), ("3M", 66), ("6M", 132), ("1Y", 252), ("ALL", None)]
+    RANGES = [("1M", 22), ("6M", 132), ("1Y", 252), ("3Y", 756), ("5Y", 1260), ("10Y", None)]
 
     def __init__(self) -> None:
         super().__init__()
@@ -233,7 +233,7 @@ class ChartPage(QWidget):
         self._range_buttons[-1].setChecked(True)
 
         toolbar.addStretch(1)
-        self._hint = QLabel("Candles · Volume · RSI · MACD")
+        self._hint = QLabel("Candles · Volume · SMA · Bollinger · RSI · MACD")
         self._hint.setObjectName("SubtitleLabel")
         toolbar.addWidget(self._hint)
 

@@ -12,4 +12,5 @@ PyMuPDF
 openpyxl
 python-docx
 reportlab
+apify-client
 pytest

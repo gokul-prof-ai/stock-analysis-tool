@@ -9,8 +9,8 @@ from ..models import NormalizedCompany
 
 CONTAINS_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("operating_cash_flow", ("operating_cash_flow", "cash_flow_from_operations", "net_cash_from_operating", "cash_generated_from_operations", "cash_from_operating")),
-    ("cash_and_equivalents", ("cash_and_equivalents", "cash_equivalents", "cash")),
-    ("short_term_investments", ("short_term_investment", "marketable_securities")),
+    ("cash_and_equivalents", ("cash_and_equivalents", "cash_equivalents", "cash_balance", "cash_in_hand")),
+    ("short_term_investments", ("short_term_investment", "marketable_securities", "investments")),
     ("receivables", ("receivable", "sundry_debtor")),
     ("inventory", ("inventory", "inventories", "stock_in_trade")),
     ("payables", ("payable", "sundry_creditor")),
@@ -27,14 +27,15 @@ CONTAINS_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("total_liabilities", ("total_liabilit",)),
     ("capex", ("capex", "capital_expenditure")),
     ("shares_outstanding", ("shares_outstanding", "outstanding_share", "number_of_share", "equity_share")),
+    ("eps", ("eps", "earnings_per_share")),
     ("revenue", ("revenue", "net_sales", "sales", "total_income")),
     ("cogs", ("cost_of_goods", "cost_of_revenue", "cost_of_sales", "cogs", "purchase")),
     ("gross_profit", ("gross_profit",)),
-    ("operating_expenses", ("operating_expense", "opex", "selling_general", "sga")),
-    ("operating_profit", ("operating_profit", "operating_income")),
+    ("operating_expenses", ("operating_expense", "operating_expenses", "expenses", "opex", "selling_general", "sga")),
+    ("operating_profit", ("operating_profit", "operating_income", "financing_profit")),
     ("ebitda", ("ebitda",)),
-    ("ebit", ("ebit", "profit_before_interest_and_tax")),
-    ("interest_expense", ("interest_expense", "finance_cost", "interest_paid")),
+    ("ebit", ("ebit", "profit_before_interest_and_tax", "profit_before_tax")),
+    ("interest_expense", ("interest_expense", "finance_cost", "interest_paid", "interest")),
     ("net_profit", ("net_profit", "net_income", "profit_after_tax", "profit_for_the_year", "pat")),
     ("depreciation_amortization", ("depreciation", "amortization")),
 ]
@@ -130,3 +131,24 @@ class FinancialExtractor:
 
         if values.get("total_debt") is None and values.get("total_liabilities") is not None:
             values["total_debt"] = values["total_liabilities"]
+
+        # Public company pages often omit current classifications, especially for banks.
+        if values.get("current_assets") is None:
+            total_assets = values.get("total_assets")
+            fixed_assets = values.get("fixed_assets")
+            if total_assets is not None:
+                values["current_assets"] = total_assets - (fixed_assets or 0.0)
+
+        if values.get("current_liabilities") is None:
+            total_liabilities = values.get("total_liabilities")
+            total_equity = values.get("total_equity")
+            if total_liabilities is not None:
+                values["current_liabilities"] = max(
+                    total_liabilities - (total_equity or 0.0), 0.0
+                )
+
+        if values.get("shares_outstanding") is None:
+            net_profit = values.get("net_profit")
+            eps = values.get("eps")
+            if net_profit is not None and eps is not None and not math.isclose(eps, 0.0):
+                values["shares_outstanding"] = net_profit / eps

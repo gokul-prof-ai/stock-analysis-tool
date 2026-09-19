@@ -268,6 +268,7 @@ class DataNormalizer:
         prices: list[PricePoint] = []
         shareholding: list[ShareholdingPoint] = []
 
+
         for table in tables:
             if self._is_key_value_table(table):
                 continue
@@ -284,6 +285,19 @@ class DataNormalizer:
             financials.extend(self._financials_from_table(table, metadata))
             prices.extend(self._prices_from_table(table))
             shareholding.extend(self._shareholding_from_table(table))
+
+        current_price = _to_float(metadata.get("current_price"))
+        if not prices and current_price is not None and current_price >= 0:
+            today = date.today()
+            prices.append(
+                PricePoint(
+                    date=today,
+                    open=current_price,
+                    high=current_price,
+                    low=current_price,
+                    close=current_price,
+                )
+            )
 
         source_ratios = self._source_ratios_from_tables(tables)
 

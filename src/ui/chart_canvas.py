@@ -49,6 +49,10 @@ class TradingViewChartCanvas(FigureCanvasQTAgg):
         lows = self._slice(self.report.low)
         closes = self._slice(self.report.close)
         volumes = self._slice(self.report.volume)
+        sma_fast = self._slice(self.report.sma_fast)
+        sma_slow = self._slice(self.report.sma_slow)
+        bollinger_upper = self._slice(self.report.bollinger_upper)
+        bollinger_lower = self._slice(self.report.bollinger_lower)
         rsi = self._slice(self.report.rsi)
         macd = self._slice(self.report.macd_line)
         signal = self._slice(self.report.macd_signal_line)
@@ -78,6 +82,28 @@ class TradingViewChartCanvas(FigureCanvasQTAgg):
                           facecolor=color, edgecolor=color)
             )
             ax_v.bar(index, volumes[index], color=color, width=0.64)
+
+        for values, label, color in (
+            (sma_fast, "SMA 20", "#f5a623"),
+            (sma_slow, "SMA 50", "#42a5f5"),
+        ):
+            value_x = [index for index, value in enumerate(values) if value is not None]
+            value_y = [value for value in values if value is not None]
+            if value_x:
+                ax_c.plot(value_x, value_y, color=color, linewidth=1.0, label=label)
+
+        band_x = [
+            index
+            for index, (upper, lower) in enumerate(zip(bollinger_upper, bollinger_lower))
+            if upper is not None and lower is not None
+        ]
+        if band_x:
+            upper = [bollinger_upper[index] for index in band_x]
+            lower = [bollinger_lower[index] for index in band_x]
+            ax_c.fill_between(band_x, lower, upper, color=self.ACCENT, alpha=0.08, label="Bollinger")
+
+        if len(closes) > 1:
+            ax_c.legend(loc="upper left", fontsize=7, frameon=False, labelcolor=self.TEXT)
 
         ax_c.text(0.01, 0.95, f"{self.ticker} · candles · vol · RSI · MACD",
                   transform=ax_c.transAxes, color=self.TEXT, fontsize=9, alpha=0.85)

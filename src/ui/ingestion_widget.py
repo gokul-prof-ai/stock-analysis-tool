@@ -28,6 +28,7 @@ class IngestionWidget(QWidget):
 
     def __init__(self) -> None:
         super().__init__()
+        self.setObjectName("LandingPanel")
         self.worker: IngestionWorker | None = None
         self._search_worker: SearchWorker | None = None
         self._selected_slug: str | None = None
@@ -47,27 +48,48 @@ class IngestionWidget(QWidget):
         subtitle.setAlignment(Qt.AlignCenter)
         layout.addWidget(subtitle)
 
-        layout.addSpacing(30)
+        search_card = QWidget()
+        search_card.setObjectName("SearchCard")
+        search_layout = QVBoxLayout(search_card)
+        search_layout.setContentsMargins(14, 14, 14, 14)
+        search_layout.setSpacing(10)
+
+        self.search_label = QLabel("Company search")
+        self.search_label.setObjectName("SectionLabel")
+        self.search_label.setAlignment(Qt.AlignLeft)
+        search_layout.addWidget(self.search_label)
 
         row = QHBoxLayout()
+        row.setSpacing(10)
         self.ticker_input = QLineEdit()
+        self.ticker_input.setObjectName("MainInput")
         self.ticker_input.setPlaceholderText("Search company or ticker (e.g., Axis Bank, RELIANCE)...")
         self.ticker_input.setMinimumHeight(44)
+        self.ticker_input.setClearButtonEnabled(True)
+        self.ticker_input.setToolTip("Search by company name or ticker")
+        self.ticker_input.setAccessibleName("Company search")
+        self.ticker_input.setFocusPolicy(Qt.StrongFocus)
+        self.search_label.setBuddy(self.ticker_input)
         self.ticker_input.returnPressed.connect(self._fetch_online)
 
         self.fetch_btn = QPushButton("Fetch Online Data")
         self.fetch_btn.setObjectName("FetchButton")
         self.fetch_btn.setMinimumHeight(44)
         self.fetch_btn.setMinimumWidth(170)
+        self.fetch_btn.setToolTip("Load company data from the online source")
         self.fetch_btn.clicked.connect(self._fetch_online)
 
         row.addWidget(self.ticker_input, stretch=1)
         row.addWidget(self.fetch_btn)
-        layout.addLayout(row)
+        search_layout.addLayout(row)
+        layout.addWidget(search_card)
 
         self.suggestion_list = QListWidget()
         self.suggestion_list.setMaximumHeight(230)
         self.suggestion_list.setVisible(False)
+        self.suggestion_list.setAlternatingRowColors(True)
+        self.suggestion_list.setSelectionMode(QListWidget.SingleSelection)
+        self.suggestion_list.setFocusPolicy(Qt.StrongFocus)
         self.suggestion_list.itemClicked.connect(self._apply_suggestion)
         self.suggestion_list.itemActivated.connect(self._apply_suggestion)
         layout.addWidget(self.suggestion_list)
@@ -81,6 +103,7 @@ class IngestionWidget(QWidget):
         self.upload_btn = QPushButton("Upload Local Report  (PDF / XLSX / XLS / CSV / JSON)")
         self.upload_btn.setObjectName("SecondaryButton")
         self.upload_btn.setMinimumHeight(56)
+        self.upload_btn.setToolTip("Upload a financial report file from your machine")
         self.upload_btn.clicked.connect(self._upload_file)
         layout.addWidget(self.upload_btn)
 

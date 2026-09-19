@@ -8,6 +8,7 @@ from src.ingestion.json_parser import JSONParser
 from src.ingestion.normalizer import DataNormalizer
 from src.ingestion.pdf_parser import PDFParser
 from src.ingestion.screener import ScreenerScraper
+from src.ingestion.nse_market import NSEMarketData
 
 CSV_CONTENT = """statement_type,fiscal_year,line_item,value
 balance_sheet,2023,Equity,100
@@ -148,3 +149,20 @@ def test_screener_html_parser_and_normalizer():
     assert normalized.company.ticker == "TEST"
     assert normalized.financials[0].line_item == "Revenue"
     assert normalized.financials[0].value == 100.0
+
+
+def test_nse_market_row_parser():
+    price = NSEMarketData._parse_row(
+        {
+            "CH_TIMESTAMP": "18-Sep-2026",
+            "CH_OPENING_PRICE": "100.00",
+            "CH_TRADE_HIGH_PRICE": "110.00",
+            "CH_TRADE_LOW_PRICE": "95.00",
+            "CH_CLOSING_PRICE": "105.00",
+            "CH_TOT_TRADED_QTY": "1200",
+        }
+    )
+
+    assert price is not None
+    assert price.close == 105.0
+    assert price.volume == 1200

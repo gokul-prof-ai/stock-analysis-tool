@@ -32,3 +32,26 @@ def test_parse_duckduckgo_html():
     html = "uddg=https%3A%2F%2Fwww.screener.in%2Fcompany%2FAXISBANK%2F&rut=abc"
 
     assert parse_duckduckgo_html(html) == [{"name": "AXISBANK", "slug": "AXISBANK"}]
+
+
+def test_search_companies_uses_name_to_slug_fallback():
+    scraper = ScreenerScraper()
+
+    results = scraper.search_companies("axis bank", limit=5)
+
+    assert results
+    assert results[0]["slug"] == "AXISBANK"
+
+
+def test_apify_payload_extraction_handles_nested_html():
+    payload = {
+        "url": "https://www.screener.in/company/AXISBANK/",
+        "page": {
+            "content": "<html><body><table><tr><th>Price</th></tr></table></body></html>"
+        },
+    }
+
+    html = ScreenerScraper._extract_apify_html(payload)
+
+    assert "<table" in html
+    assert "Price" in html

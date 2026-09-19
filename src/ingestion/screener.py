@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+import os
 import re
 import urllib.error
 import urllib.parse
@@ -9,7 +11,13 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+try:
+    from apify_client import ApifyClient
+except Exception:  # pragma: no cover - dependency optional at runtime
+    ApifyClient = None
+
 from .base import DataSource, IngestionError, ParsedTable, RawExtract
+from .nse_market import NSEMarketData
 
 HEADING_TAGS = ["h1", "h2", "h3", "h4"]
 
@@ -104,8 +112,35 @@ def parse_duckduckgo_html(html: str, limit: int = 8) -> list[dict[str, str]]:
     return results
 
 
+def _normalize_company_name(name: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9]+", " ", name or "")
+    tokens = [token for token in cleaned.split() if token and token.upper() not in STOP_TOKENS]
+    return "".join(token.upper() for token in tokens)
+
+
+def _company_slug_from_query(query: str) -> str | None:
+    value = (query or "").strip()
+    if not value:
+        return None
+
+    cleaned = re.sub(r"[^A-Za-z0-9]+", " ", value)
+    tokens = [token for token in cleaned.split() if token]
+    if not tokens:
+        return None
+
+    joined = "".join(token.upper() for token in tokens)
+    if len(joined) >= 3 and joined not in EXCLUDED_SLUGS:
+        return joined
+
+    compact = "".join(token.upper() for token in tokens if token.upper() not in STOP_TOKENS)
+    if len(compact) >= 3 and compact not in EXCLUDED_SLUGS:
+        return compact
+
+    return None
+
+
 class ScreenerScraper(DataSource):
-    """Screener.in scraper using pure web-scraping company resolution."""
+    """Screener.in scraper with a direct fallback to the Apify actor."""
 
     source_name = "screener"
 
@@ -116,6 +151,83 @@ class ScreenerScraper(DataSource):
             "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
         )
 
+    @staticmethod
+    def _extract_apify_html(payload: Any) -> str:
+        if payload is None:
+            return ""
+
+        if isinstance(payload, str):
+            return payload
+
+        if isinstance(payload, dict):
+            for key in ("html", "content", "pageContent", "body", "page"):
+                value = payload.get(key)
+                if value is None:
+                    continue
+                extracted = ScreenerScraper._extract_apify_html(value)
+                if extracted:
+                    return extracted
+
+            nested = payload.get("page")
+            if isinstance(nested, dict):
+                nested_html = ScreenerScraper._extract_apify_html(nested)
+                if nested_html:
+                    return nested_html
+
+        if isinstance(payload, list):
+            for item in payload:
+                html = ScreenerScraper._extract_apify_html(item)
+                if html:
+                    return html
+
+        return ""
+
+    def _fetch_apify_company(self, target: str) -> tuple[str, str]:
+        if ApifyClient is None:
+            raise IngestionError("apify-client is not installed")
+
+        token = os.getenv("APIFY_API_TOKEN")
+        if not token:
+            raise IngestionError("APIFY_API_TOKEN is not set for the Screener Apify fallback")
+
+        client = ApifyClient(token)
+        run_input = {
+            "mode": None,
+            "url": None,
+            "queryString": None,
+            "username": None,
+            "password": None,
+        }
+
+        query = str(target).strip()
+        url = COMPANY_URL.format(slug=query.upper())
+        run_input["url"] = url
+        run_input["mode"] = "company"
+
+        run = client.actor("shashwattrivedi/screener-in").call(run_input=run_input)
+        dataset_id = getattr(run, "default_dataset_id", None)
+        if not dataset_id:
+            raise IngestionError("Apify Screener actor did not return a dataset ID")
+
+        items = list(client.dataset(dataset_id).iterate_items())
+        if not items:
+            raise IngestionError("Apify Screener actor returned no data")
+
+        html = ""
+        for item in items:
+            candidate = ScreenerScraper._extract_apify_html(item)
+            if candidate:
+                html = candidate
+                break
+
+        if not html:
+            raise IngestionError("Apify Screener actor did not contain usable HTML content")
+
+        if not self._has_company_tables(html):
+            raise IngestionError("Apify Screener actor did not return a valid company page")
+
+        return html, query.upper()
+
     def load(self, target: str | Path) -> RawExtract:
         ticker = str(target).strip()
 
@@ -124,7 +236,33 @@ class ScreenerScraper(DataSource):
 
         html, slug = self._fetch_company_page(ticker)
 
-        return self.parse_html(html, slug)
+        extract = self.parse_html(html, slug)
+
+        try:
+            prices = NSEMarketData(timeout=self.timeout).fetch_daily(slug, days=3652)
+        except IngestionError:
+            prices = []
+
+        if prices:
+            extract.tables.append(
+                ParsedTable(
+                    name="nse_daily_prices",
+                    columns=["date", "open", "high", "low", "close", "volume"],
+                    rows=[
+                        [
+                            item.date.isoformat(),
+                            str(item.open),
+                            str(item.high),
+                            str(item.low),
+                            str(item.close),
+                            str(item.volume),
+                        ]
+                        for item in prices
+                    ],
+                )
+            )
+
+        return extract
 
     def search_companies(self, query: str, limit: int = 8) -> list[dict[str, str]]:
         """Search for companies by scraping Screener search, then DuckDuckGo."""
@@ -132,6 +270,10 @@ class ScreenerScraper(DataSource):
 
         if not query:
             return []
+
+        direct_slug = _company_slug_from_query(query)
+        if direct_slug:
+            return [{"name": direct_slug, "slug": direct_slug}]
 
         try:
             html = self._fetch_urllib(
@@ -178,10 +320,13 @@ class ScreenerScraper(DataSource):
             if html is not None:
                 return html, slug
 
-        raise IngestionError(
-            f"Could not fetch a Screener.in company page for '{ticker}'. "
-            "Check your internet connection, or enter the exact Screener slug (e.g., AXISBANK)."
-        )
+        try:
+            return self._fetch_apify_company(ticker)
+        except IngestionError:
+            raise IngestionError(
+                f"Could not fetch a Screener.in company page for '{ticker}'. "
+                "Check your internet connection, or enter the exact Screener slug (e.g., AXISBANK)."
+            )
 
     def _try_company_url(self, slug: str) -> str | None:
         url = COMPANY_URL.format(slug=slug)
@@ -339,8 +484,27 @@ class ScreenerScraper(DataSource):
     def _parse_metadata(self, soup: BeautifulSoup, ticker: str) -> dict[str, Any]:
         name_tag = soup.find("h1")
         company_name = name_tag.get_text(strip=True) if name_tag else ticker
+        current_price = None
 
-        return {
+        for item in soup.select("li.flex.flex-space-between"):
+            label = item.select_one(".name")
+            value = item.select_one(".number")
+            if label is None or value is None:
+                continue
+            if label.get_text(strip=True).lower() != "current price":
+                continue
+
+            raw_price = re.sub(r"[^0-9.-]", "", value.get_text(strip=True))
+            try:
+                current_price = float(raw_price)
+            except ValueError:
+                current_price = None
+            break
+
+        metadata: dict[str, Any] = {
             "ticker": ticker,
             "name": company_name,
         }
+        if current_price is not None:
+            metadata["current_price"] = current_price
+        return metadata
